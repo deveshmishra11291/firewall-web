@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: 'Space Grotesk', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-display: 'Syne', 'Space Grotesk', sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+}
+
+.font-calligraphic {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  letter-spacing: 0.03em;
+}
+
 @layer base {
   :root {
     --fps-black: #000000;
@@ -42,10 +55,9 @@
   body {
     background-color: var(--fps-black);
     color: var(--fps-ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Space Grotesk', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     overflow-x: hidden;
-    user-select: none;
-    -webkit-user-select: none;
+    letter-spacing: -0.015em;
   }
 
   /* Custom scrollbar */
@@ -151,6 +163,8 @@
 
 .font-mono-code {
   font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "zero" 1;
 }
 
 /* Overflow text reveals */

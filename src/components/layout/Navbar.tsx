@@ -30,7 +30,7 @@ export const Navbar: React.FC = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/10 transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between font-sans">
           
-          {/* Left: Custom Emblem Logo + Vertical Separator + "SANDBOX" Brand */}
+          {/* Left: Custom Emblem Logo + Vertical Separator + "AI AGENT FIREWALL" Brand */}
           <Link
             to="/"
             onClick={() => sound.playClick()}
@@ -58,27 +58,25 @@ export const Navbar: React.FC = () => {
             {/* Vertical Separator Line (matching reference layout) */}
             <div className="h-6 w-[1.5px] bg-white/20" />
 
-            {/* Project Name: SANDBOX with secondary runtime tag */}
+            {/* Project Name: AI AGENT FIREWALL with runtime tag (Dot-Free) */}
             <div className="flex flex-col text-left leading-tight select-none">
               <div className="flex items-center gap-1.5">
-                <span className="font-bold text-base tracking-widest text-white group-hover:text-[#d9ba84] transition-colors font-mono-code uppercase">
-                  SANDBOX
+                <span className="font-bold text-sm sm:text-base tracking-widest text-white group-hover:text-[#d9ba84] transition-colors font-mono uppercase">
+                  AGENT FIREWALL
                 </span>
-                <span className="size-1.5 rounded-full bg-[#d9ba84] shadow-[0_0_8px_#d9ba84] animate-ping" />
               </div>
-              <span className="text-[10px] text-zinc-400 tracking-[0.2em] uppercase font-mono-code">
-                RUNTIME DEFENSE
+              <span className="text-[10px] text-zinc-400 tracking-[0.2em] uppercase font-mono">
+                ZERO-TRUST WASI RUNTIME
               </span>
             </div>
           </Link>
 
-          {/* Center: Floating Pill Navigation Capsule (matching reference layout) */}
-          <nav className="hidden md:flex items-center p-1.5 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.5)] gap-1">
+          {/* Center: Floating Pill Navigation Capsule */}
+          <nav className="hidden md:flex items-center p-1.5 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.5)] gap-1 font-mono text-xs">
             <Link
               to="/"
               onClick={() => sound.playClick()}
-              data-cursor="HOME"
-              className={`px-4 py-1.5 rounded-xl text-xs transition-all duration-200 ${
+              className={`px-3.5 py-1.5 rounded-xl transition-all duration-200 ${
                 isActive('/')
                   ? 'bg-white/10 text-[#d9ba84] font-bold shadow-[0_0_12px_rgba(217,186,132,0.2)]'
                   : 'text-zinc-300 hover:text-white hover:bg-white/5 font-medium'
@@ -90,51 +88,47 @@ export const Navbar: React.FC = () => {
             <Link
               to="/product"
               onClick={() => sound.playClick()}
-              data-cursor="PLATFORM"
-              className={`px-4 py-1.5 rounded-xl text-xs transition-all duration-200 ${
+              className={`px-3.5 py-1.5 rounded-xl transition-all duration-200 ${
                 isActive('/product')
                   ? 'bg-white/10 text-[#d9ba84] font-bold shadow-[0_0_12px_rgba(217,186,132,0.2)]'
                   : 'text-zinc-300 hover:text-white hover:bg-white/5 font-medium'
               }`}
             >
-              Platform
+              Architecture
             </Link>
 
             <Link
               to="/solutions/prompt-injection"
               onClick={() => sound.playClick()}
-              data-cursor="SOLUTIONS"
-              className={`px-4 py-1.5 rounded-xl text-xs transition-all duration-200 ${
+              className={`px-3.5 py-1.5 rounded-xl transition-all duration-200 ${
                 location.pathname.startsWith('/solutions')
                   ? 'bg-white/10 text-[#d9ba84] font-bold shadow-[0_0_12px_rgba(217,186,132,0.2)]'
                   : 'text-zinc-300 hover:text-white hover:bg-white/5 font-medium'
               }`}
             >
-              Solutions
+              Threat Matrix
             </Link>
 
             <Link
-              to="/blog"
+              to="/docs"
               onClick={() => sound.playClick()}
-              data-cursor="RESEARCH"
-              className={`px-4 py-1.5 rounded-xl text-xs transition-all duration-200 ${
-                isActive('/blog')
+              className={`px-3.5 py-1.5 rounded-xl transition-all duration-200 ${
+                isActive('/docs') || isActive('/blog')
                   ? 'bg-white/10 text-[#d9ba84] font-bold shadow-[0_0_12px_rgba(217,186,132,0.2)]'
                   : 'text-zinc-300 hover:text-white hover:bg-white/5 font-medium'
               }`}
             >
-              Research
+              CLI &amp; Docs
             </Link>
           </nav>
 
-          {/* Right: CTA Pill Button + Sign In Link + Audio Toggle */}
-          <div className="flex items-center gap-4 sm:gap-5">
+          {/* Right: GitHub Star Button + Audio Toggle */}
+          <div className="flex items-center gap-3 sm:gap-4">
             
             {/* Audio Feedback Switcher */}
             <button
               onClick={toggleAudio}
-              data-cursor="AUDIO"
-              className="flex items-center gap-1.5 text-[11px] font-mono-code text-zinc-400 hover:text-[#d9ba84] transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 text-[11px] font-mono text-zinc-400 hover:text-[#d9ba84] transition-colors cursor-pointer"
               title="Toggle Audio Feedback"
             >
               {audioEnabled ? (
@@ -150,27 +144,18 @@ export const Navbar: React.FC = () => {
               )}
             </button>
 
-            {/* Request Demo / Call Pill Button (matching reference CTA) */}
-            <Link
-              to="/contact"
+            {/* GitHub Repo Button */}
+            <a
+              href="https://github.com/devmishra2049/ai-agent-firewall"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => sound.playClick()}
-              data-cursor="DEMO"
-              className="px-4 sm:px-5 py-2 rounded-full border border-[#d9ba84] bg-[#d9ba84]/15 hover:bg-[#d9ba84] text-[#d9ba84] hover:text-black text-xs font-bold tracking-wide flex items-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(217,186,132,0.25)] hover:shadow-[0_0_35px_rgba(217,186,132,0.6)] cursor-pointer"
+              className="px-4 py-2 rounded-full border border-[#d9ba84] bg-[#d9ba84]/15 hover:bg-[#d9ba84] text-[#d9ba84] hover:text-black text-xs font-bold tracking-wide flex items-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(217,186,132,0.25)] hover:shadow-[0_0_35px_rgba(217,186,132,0.6)] cursor-pointer"
             >
               <ShieldCheck className="size-3.5" />
-              <span>Request Demo</span>
-              <ArrowUpRight className="size-3 hidden sm:inline" />
-            </Link>
-
-            {/* Sign In Link (matching reference) */}
-            <Link
-              to="/contact"
-              onClick={() => sound.playClick()}
-              data-cursor="LOGIN"
-              className="text-xs font-medium text-zinc-300 hover:text-white transition-colors cursor-pointer"
-            >
-              Sign In
-            </Link>
+              <span>GitHub</span>
+              <ArrowUpRight className="size-3" />
+            </a>
 
             {/* Mobile Menu Hamburger */}
             <button
@@ -194,61 +179,68 @@ export const Navbar: React.FC = () => {
             <div className="text-[10px] text-zinc-500 uppercase tracking-widest">
               NAVIGATION
             </div>
-            <div className="flex flex-col space-y-4 text-xl">
+            <div className="flex flex-col space-y-4 text-lg">
               <Link
                 to="/"
                 onClick={() => { sound.playClick(); setMenuOpen(false); }}
-                className="text-white hover:text-[#d9ba84]"
+                className="text-white hover:text-[#d9ba84] flex items-center"
               >
-                01 / HOME
+                <span className="font-mono text-sm font-semibold text-[#d9ba84] tabular-nums mr-3">01</span>
+                <span>HOME</span>
               </Link>
               <Link
                 to="/product"
                 onClick={() => { sound.playClick(); setMenuOpen(false); }}
-                className="text-white hover:text-[#d9ba84]"
+                className="text-white hover:text-[#d9ba84] flex items-center"
               >
-                02 / PLATFORM ARCHITECTURE
+                <span className="font-mono text-sm font-semibold text-[#d9ba84] tabular-nums mr-3">02</span>
+                <span>PLATFORM ARCHITECTURE</span>
               </Link>
               <Link
                 to="/solutions/prompt-injection"
                 onClick={() => { sound.playClick(); setMenuOpen(false); }}
-                className="text-white hover:text-[#d9ba84]"
+                className="text-white hover:text-[#d9ba84] flex items-center"
               >
-                03 / PROMPT INJECTION (DERAIL)
+                <span className="font-mono text-sm font-semibold text-[#d9ba84] tabular-nums mr-3">03</span>
+                <span>PROMPT INJECTION (DERAIL)</span>
               </Link>
               <Link
                 to="/solutions/data-leakage"
                 onClick={() => { sound.playClick(); setMenuOpen(false); }}
-                className="text-white hover:text-[#d9ba84]"
+                className="text-white hover:text-[#d9ba84] flex items-center"
               >
-                04 / DATA LOSS &amp; DNS EXFIL
+                <span className="font-mono text-sm font-semibold text-[#d9ba84] tabular-nums mr-3">04</span>
+                <span>DATA LOSS &amp; DNS EXFIL</span>
               </Link>
               <Link
                 to="/solutions/mcp-runtime"
                 onClick={() => { sound.playClick(); setMenuOpen(false); }}
-                className="text-white hover:text-[#d9ba84]"
+                className="text-white hover:text-[#d9ba84] flex items-center"
               >
-                05 / MCP RUNTIME DEFENSE
+                <span className="font-mono text-sm font-semibold text-[#d9ba84] tabular-nums mr-3">05</span>
+                <span>MCP RUNTIME DEFENSE</span>
               </Link>
               <Link
                 to="/solutions/excessive-agency"
                 onClick={() => { sound.playClick(); setMenuOpen(false); }}
-                className="text-white hover:text-[#d9ba84]"
+                className="text-white hover:text-[#d9ba84] flex items-center"
               >
-                06 / EXCESSIVE AGENCY (JIT)
+                <span className="font-mono text-sm font-semibold text-[#d9ba84] tabular-nums mr-3">06</span>
+                <span>EXCESSIVE AGENCY (JIT)</span>
               </Link>
               <Link
-                to="/blog"
+                to="/docs"
                 onClick={() => { sound.playClick(); setMenuOpen(false); }}
-                className="text-white hover:text-[#d9ba84]"
+                className="text-white hover:text-[#d9ba84] flex items-center"
               >
-                07 / RESEARCH PAPERS
+                <span className="font-mono text-sm font-semibold text-[#d9ba84] tabular-nums mr-3">07</span>
+                <span>CLI &amp; TERMINAL DOCS</span>
               </Link>
             </div>
           </div>
 
           <div className="pt-8 border-t border-white/10 flex items-center justify-between text-xs text-zinc-500">
-            <span>SANDBOX AGENTIC SECURITY</span>
+            <span>AI AGENT FIREWALL</span>
             <Link
               to="/contact"
               onClick={() => { sound.playClick(); setMenuOpen(false); }}

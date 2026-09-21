@@ -155,9 +155,8 @@ export const SpiralIntroLoader: React.FC<SpiralIntroLoaderProps> = ({ onComplete
               {percent.toString().padStart(2, '0')}%
             </div>
             
-            <div className="flex items-center justify-center gap-2 text-[10px] sm:text-xs text-[#d9ba84] uppercase tracking-[0.25em]">
-              <span className="size-1.5 rounded-full bg-[#d9ba84] animate-ping" />
-              <span>UNCOILING SANDBOX SPIRAL PROTOCOL</span>
+            <div className="flex items-center justify-center gap-2 text-[10px] sm:text-xs text-[#d9ba84] uppercase tracking-[0.25em] font-mono">
+              <span>INITIALIZING AI AGENT FIREWALL RUNTIME</span>
             </div>
 
             <div className="text-[10px] text-zinc-600 uppercase tracking-widest pt-1">

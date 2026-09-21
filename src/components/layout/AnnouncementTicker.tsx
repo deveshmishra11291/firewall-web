@@ -7,7 +7,7 @@ export const AnnouncementTicker: React.FC = () => {
   const items = [
     {
       icon: Flame,
-      label: 'SANDBOX raises $5M seed for on-device agent security',
+      label: 'AI Agent Firewall v1.0 released: On-device WASI runtime defense',
       to: '/blog',
     },
     {

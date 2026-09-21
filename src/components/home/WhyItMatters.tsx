@@ -10,40 +10,44 @@ import { TiltCard } from '../animations/TiltCard';
 export const WhyItMatters: React.FC = () => {
   const threats = [
     {
-      title: 'Shadow AI Agents',
-      subtitle: 'Security sees actions only after kernel dispatch.',
-      description: 'Developers install unapproved CLI harnesses and community tools with full host machine permissions and zero centralized governance.',
-      icon: EyeOff,
-      to: '/product',
-      code: 'UNMONITORED_HARNESS',
-      cursor: 'SHADOW',
-    },
-    {
-      title: 'Exposed Secrets',
-      subtitle: 'Credentials leak into tool query strings.',
-      description: 'Private tokens, database connection strings, and internal company schemas enter web search tools and third-party SaaS APIs without warning.',
-      icon: Database,
-      to: '/solutions/data-leakage',
-      code: 'TOOL_ARG_EXPOSURE',
-      cursor: 'SECRETS',
-    },
-    {
-      title: 'Prompt Injection',
-      subtitle: 'Untrusted content hijacks the execution path.',
-      description: 'Malicious instructions hidden inside ingested PDFs, cloned repositories, or issue comments redirect the agent trajectory to run attacker code.',
+      title: 'Reverse Shells & RCE',
+      subtitle: 'Attacker takes control of host shell.',
+      description: 'Autonomous agents generate socket connects and spawn interactive reverse shells (std::process::Command, os.dup2, bash), granting root terminal access.',
       icon: ShieldAlert,
-      to: '/solutions/prompt-injection',
-      code: 'INDIRECT_INJECTION',
-      cursor: 'DERAIL',
+      code: 'REVERSE_SHELL_RCE',
+      cursor: 'SHELL',
+      defense: 'SIGKILL 137 (0.4ms)',
+      severity: 'CRITICAL',
     },
     {
-      title: 'DNS Tunneling',
-      subtitle: 'Intellectual property exfiltrated silently.',
-      description: 'Agents encode internal source files into DNS subdomain lookups, bypassing conventional DLP filters before perimeter monitors alert.',
+      title: 'Credential Exfiltration',
+      subtitle: 'Private tokens leaked over DNS & HTTP.',
+      description: 'Prompt-injected agents read sensitive files (.env, /etc/passwd, ~/.aws/credentials) and silently exfiltrate them via outbound socket payloads.',
+      icon: Database,
+      code: 'SECRET_EXFILTRATION',
+      cursor: 'SECRETS',
+      defense: 'SOCKET EGRESS JAIL',
+      severity: 'HIGH',
+    },
+    {
+      title: 'Filesystem Destruction',
+      subtitle: 'Rogue wipes and unauthorized deletes.',
+      description: 'Hallucinated or poisoned agents run destructive file commands (shutil.rmtree, rm -rf, truncate) that corrupt developer source repositories.',
+      icon: EyeOff,
+      code: 'DESTRUCTIVE_WIPE',
+      cursor: 'DESTRUCTION',
+      defense: 'CAP-STD ROOT LOCK',
+      severity: 'CRITICAL',
+    },
+    {
+      title: 'Runaway Loops & DoS',
+      subtitle: 'Infinite generation freezes host CPU.',
+      description: 'Recursive tool invocations and infinite generation loops exhaust CPU cycles. AI Agent Firewall enforces a strict 1,000,000 CPU fuel ceiling.',
       icon: Network,
-      to: '/solutions/data-leakage',
-      code: 'DNS_TUNNEL_EXFIL',
-      cursor: 'EGRESS',
+      code: 'CPU_FUEL_EXHAUSTION',
+      cursor: 'FUEL',
+      defense: '1M CPU FUEL CAP',
+      severity: 'HIGH',
     },
   ];
 
@@ -62,7 +66,7 @@ export const WhyItMatters: React.FC = () => {
           <SplitTextReveal type="words" delay={0.1}>
             UNPREDICTABLE AI.
           </SplitTextReveal> <br />
-          <span className="text-[#d9ba84] italic font-serif">
+          <span className="text-[#d9ba84] font-medium tracking-tight">
             <SplitTextReveal type="words" delay={0.25}>
               uncontrolled execution.
             </SplitTextReveal>
@@ -78,10 +82,8 @@ export const WhyItMatters: React.FC = () => {
         {threats.map((threat, idx) => {
           const Icon = threat.icon;
           return (
-            <TiltCard key={idx} maxTilt={12} className="rounded-2xl h-full">
-              <Link
-                to={threat.to}
-                onClick={() => sound.playClick()}
+            <TiltCard key={idx} maxTilt={10} className="rounded-2xl h-full">
+              <div
                 data-cursor={threat.cursor}
                 className="fps-glass rounded-2xl p-7 flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 shadow-2xl relative overflow-hidden h-full"
               >
@@ -109,11 +111,12 @@ export const WhyItMatters: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-white/10 flex items-center justify-between font-mono-code text-xs text-zinc-400 group-hover:text-white transition-colors mt-6 font-medium">
-                  <span>VIEW SPECIFICATION</span>
-                  <ArrowUpRight className="size-4 text-[#d9ba84] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                {/* Clean Non-Directing Metadata Text Div */}
+                <div className="pt-6 border-t border-white/10 flex items-center justify-between font-mono text-[11px] text-zinc-400 mt-6">
+                  <span className="text-zinc-500 uppercase tracking-wider font-medium">DEFENSE</span>
+                  <span className="text-[#d9ba84] font-bold tracking-wider">{threat.defense}</span>
                 </div>
-              </Link>
+              </div>
             </TiltCard>
           );
         })}

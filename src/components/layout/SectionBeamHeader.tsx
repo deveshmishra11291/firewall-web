@@ -20,20 +20,20 @@ export const SectionBeamHeader: React.FC<SectionBeamHeaderProps> = ({
       <div className="beam-line" />
 
       {/* Label and Count */}
-      <div className="flex items-center justify-between font-mono-code text-xs tracking-wider uppercase text-zinc-400">
-        <div className="flex items-center gap-4">
-          <span className="text-[#d9ba84] font-bold text-sm">
+      <div className="flex items-center justify-between font-mono text-xs uppercase text-zinc-400">
+        <div className="flex items-center gap-3">
+          <span className="font-mono text-xs font-bold tracking-widest text-[#d9ba84] tabular-nums">
             {number}
           </span>
-          <span className="text-zinc-600">/</span>
-          <span className="text-white font-medium tracking-widest text-[11px] sm:text-xs">
+          <span className="w-2.5 h-[1px] bg-white/20" />
+          <span className="text-white font-mono font-medium tracking-[0.18em] text-[11px] sm:text-xs">
             <ScrambleText text={title} />
           </span>
         </div>
 
         {subtitle && (
-          <div className="hidden sm:flex items-center gap-2 text-[10px] text-zinc-400">
-            <span className="size-1.5 rounded-full bg-[#d9ba84] animate-pulse"></span>
+          <div className="hidden sm:flex items-center gap-2 text-[10px] text-zinc-400 font-mono tracking-widest">
+            <span className="text-[#d9ba84] font-semibold">//</span>
             <span>{subtitle}</span>
           </div>
         )}

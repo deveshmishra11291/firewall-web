@@ -24,7 +24,7 @@ export const DataLeakagePage: React.FC = () => {
           <SplitTextReveal type="words" delay={0.1}>
             HALT DATA LEAKAGE &amp;
           </SplitTextReveal> <br />
-          <span className="text-[#d9ba84] italic font-serif">
+          <span className="text-[#d9ba84] font-medium tracking-tight">
             <SplitTextReveal type="words" delay={0.25}>
               dns exfiltration.
             </SplitTextReveal>

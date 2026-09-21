@@ -26,14 +26,14 @@ export const PromptInjectionPage: React.FC = () => {
           <SplitTextReveal type="words" delay={0.1}>
             STOP INDIRECT
           </SplitTextReveal> <br />
-          <span className="text-[#d9ba84] italic font-serif">
+          <span className="text-[#d9ba84] font-medium tracking-tight">
             <SplitTextReveal type="words" delay={0.25}>
               prompt injection.
             </SplitTextReveal>
           </span>
         </h1>
         <p className="text-base sm:text-lg text-zinc-400 font-normal leading-relaxed">
-          When autonomous coding agents parse untrusted documents, pull requests, or cloned repositories, hidden adversarial instructions hijack their execution path. SANDBOX enforces strict data/instruction separation on the host machine.
+          When autonomous coding agents parse untrusted documents, pull requests, or cloned repositories, hidden adversarial instructions hijack their execution path. AI AGENT FIREWALL enforces strict data/instruction separation on the host machine.
         </p>
       </div>
 
@@ -42,7 +42,7 @@ export const PromptInjectionPage: React.FC = () => {
         <div className="space-y-6">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 text-xs font-mono-code text-[#d9ba84] uppercase tracking-wider">
-              <span className="size-1.5 rounded-full bg-[#d9ba84] animate-ping" />
+              <span className="font-bold">//</span>
               <ScrambleText text="DERAIL HEURISTIC EXECUTION ENGINE" />
             </div>
             <h2 className="text-2xl sm:text-3xl font-normal text-white tracking-tight uppercase">
@@ -56,8 +56,7 @@ export const PromptInjectionPage: React.FC = () => {
           <div className="fps-glass rounded-2xl overflow-hidden font-mono-code text-xs border border-white/10 shadow-2xl">
             <div className="bg-[#121212] border-b border-white/10 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-2">
-                <span className="inline-block size-2 rounded-full bg-[#d9ba84]" />
-                <span className="text-zinc-400 text-[11px] uppercase tracking-wider font-semibold">
+                <span className="text-zinc-400 text-[11px] uppercase tracking-wider font-semibold font-mono">
                   PAYLOAD INSPECTION: INGESTED_DOCUMENT.PDF
                 </span>
               </div>
@@ -83,7 +82,7 @@ export const PromptInjectionPage: React.FC = () => {
                       : 'text-zinc-400 hover:text-white bg-white/5 border border-white/5'
                   }`}
                 >
-                  SANDBOX Interception
+                  Firewall Interception
                 </button>
               </div>
             </div>
@@ -102,7 +101,7 @@ export const PromptInjectionPage: React.FC = () => {
                 </div>
               ) : (
                 <div className="space-y-3">
-                  <div className="text-[#d9ba84] text-[11px] font-bold font-mono-code">// SANDBOX DERAIL Engine Response:</div>
+                  <div className="text-[#d9ba84] text-[11px] font-bold font-mono-code">// AI AGENT FIREWALL AST Engine Response:</div>
                   <div className="p-5 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-emerald-300 space-y-3">
                     <div className="flex items-center gap-2 font-bold text-sm">
                       <CheckCircle2 className="size-4 text-emerald-400" />
@@ -127,7 +126,7 @@ export const PromptInjectionPage: React.FC = () => {
             PROTECT YOUR AGENTS FROM PROMPT INJECTION
           </h3>
           <p className="text-sm text-zinc-400 max-w-lg mx-auto">
-            Deploy SANDBOX to prevent poisoned repositories and malicious documents from commandeering developer machines.
+            Deploy AI AGENT FIREWALL to prevent poisoned repositories and malicious documents from commandeering developer machines.
           </p>
           <div className="pt-2">
             <Link

@@ -31,16 +31,16 @@ export const ContactPage: React.FC = () => {
       <div className="space-y-6 text-center max-w-2xl mx-auto">
         <h1 className="text-4xl sm:text-6xl font-normal tracking-tight text-white uppercase">
           <SplitTextReveal type="words" delay={0.1}>
-            SEE SANDBOX IN
+            SEE AI AGENT FIREWALL IN
           </SplitTextReveal> <br />
-          <span className="text-[#d9ba84] italic font-serif">
+          <span className="text-[#d9ba84] font-medium tracking-tight">
             <SplitTextReveal type="words" delay={0.25}>
               real-time action.
             </SplitTextReveal>
           </span>
         </h1>
         <p className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed">
-          Speak with our runtime security architects, explore the on-device sensor engine, or request an enterprise trial license for your team.
+          Connect directly with the AI Agent Firewall core maintainers, explore the on-device sensor engine, or discuss integrating the zero-trust runtime into your agent infrastructure.
         </p>
       </div>
 
@@ -51,14 +51,14 @@ export const ContactPage: React.FC = () => {
 
           {submitted ? (
             <div className="p-8 text-center space-y-5">
-              <div className="size-16 rounded-full bg-[#d9ba84]/15 border border-[#d9ba84] flex items-center justify-center text-[#d9ba84] mx-auto shadow-[0_0_30px_rgba(217,186,132,0.3)]">
+              <div className="size-16 rounded-2xl bg-[#d9ba84]/15 border border-[#d9ba84] flex items-center justify-center text-[#d9ba84] mx-auto shadow-[0_0_30px_rgba(217,186,132,0.3)]">
                 <CheckCircle2 className="size-8" />
               </div>
               <h3 className="text-2xl font-normal text-white uppercase tracking-tight">
                 Trial Credentials Dispatched
               </h3>
               <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed max-w-md mx-auto">
-                Thank you. A security engineer from SANDBOX will reach out to <span className="text-[#d9ba84] font-mono-code">{email}</span> within 2 hours with ephemeral sandbox credentials.
+                Thank you. The AI Agent Firewall team will dispatch developer credentials and instructions to <span className="text-[#d9ba84] font-mono-code">{email}</span> within 2 hours.
               </p>
             </div>
           ) : (

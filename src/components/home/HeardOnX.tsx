@@ -100,7 +100,7 @@ export const HeardOnX: React.FC = () => {
             <SplitTextReveal type="words" delay={0.1}>
               THE INCIDENTS
             </SplitTextReveal> <br />
-            <span className="text-[#d9ba84] italic font-serif">
+            <span className="text-[#d9ba84] font-medium tracking-tight">
               <SplitTextReveal type="words" delay={0.25}>
                 are already documented.
               </SplitTextReveal>

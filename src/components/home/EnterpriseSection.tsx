@@ -54,14 +54,14 @@ export const EnterpriseSection: React.FC = () => {
           <SplitTextReveal type="words" delay={0.1}>
             BUILT FOR PRODUCTION
           </SplitTextReveal> <br />
-          <span className="text-[#d9ba84] italic font-serif">
+          <span className="text-[#d9ba84] font-medium tracking-tight">
             <SplitTextReveal type="words" delay={0.25}>
               engineering organizations.
             </SplitTextReveal>
           </span>
         </h2>
         <p className="text-sm sm:text-base text-zinc-200 font-normal leading-relaxed text-crisp">
-          SANDBOX integrates natively with your existing identity providers, SIEM dashboards, and compliance regimens.
+          AI AGENT FIREWALL integrates natively with your existing identity providers, SIEM dashboards, and compliance regimens.
         </p>
       </div>
 
@@ -98,29 +98,29 @@ export const EnterpriseSection: React.FC = () => {
 
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-4">
           <div className="space-y-4 max-w-xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono-code text-[#d9ba84] tracking-widest uppercase font-semibold">
-              <span className="size-2 rounded-full bg-[#d9ba84] animate-pulse" />
-              <span>THE NEW EXECUTION FRONTIER</span>
+            <div className="inline-flex items-center gap-2 text-xs font-mono text-[#d9ba84] tracking-widest uppercase font-semibold">
+              <span>ZERO-TRUST RUNTIME BOUNDARY</span>
             </div>
-            <h3 className="text-3xl sm:text-5xl font-normal text-white uppercase tracking-tight">
+            <h3 className="text-3xl sm:text-5xl font-normal text-white uppercase tracking-tight font-sans">
               AGENTS ACT. <br />
-              <span className="text-[#d9ba84] italic font-serif">SANDBOX DECIDES.</span>
+              <span className="text-[#d9ba84] font-bold">FIREWALL GOVERNS.</span>
             </h3>
             <p className="text-sm sm:text-base text-zinc-200 font-sans leading-relaxed text-crisp">
-              Equip your engineering teams with autonomous AI agents without risking production infrastructure or confidential IP.
+              Equip your engineering teams with autonomous AI agents (Claude Code, Cursor, Windsurf) without risking host root compromise or sensitive IP leakage.
             </p>
           </div>
 
           <div>
-            <Link
-              to="/contact"
+            <a
+              href="https://github.com/devmishra2049/ai-agent-firewall"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => sound.playClick()}
-              data-cursor="DEMO"
-              className="inline-flex items-center gap-3 px-8 py-5 rounded-2xl bg-[#d9ba84] hover:bg-[#f0d8a8] text-black font-bold uppercase tracking-widest text-xs transition-all duration-300 shadow-[0_0_30px_rgba(217,186,132,0.4)] hover:shadow-[0_0_50px_rgba(217,186,132,0.7)] cursor-pointer"
+              className="inline-flex items-center gap-3 px-8 py-5 rounded-2xl bg-[#d9ba84] hover:bg-[#f0d8a8] text-black font-bold uppercase tracking-widest text-xs transition-all duration-300 shadow-[0_0_30px_rgba(217,186,132,0.4)] hover:shadow-[0_0_50px_rgba(217,186,132,0.7)] cursor-pointer font-mono"
             >
-              <span>REQUEST ENTERPRISE ACCESS</span>
+              <span>GET STARTED ON GITHUB</span>
               <ArrowUpRight className="size-4" />
-            </Link>
+            </a>
           </div>
         </div>
       </div>

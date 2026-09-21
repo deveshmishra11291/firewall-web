@@ -26,14 +26,14 @@ export const ExcessiveAgencyPage: React.FC = () => {
           <SplitTextReveal type="words" delay={0.1}>
             TAME EXCESSIVE AGENCY &amp;
           </SplitTextReveal> <br />
-          <span className="text-[#d9ba84] italic font-serif">
+          <span className="text-[#d9ba84] font-medium tracking-tight">
             <SplitTextReveal type="words" delay={0.25}>
               destructive actions.
             </SplitTextReveal>
           </span>
         </h1>
         <p className="text-base sm:text-lg text-zinc-400 font-normal leading-relaxed">
-          Autonomous agents running with `yolo` or `--dangerously-skip-permissions` can accidentally wipe developer home directories or delete production cloud databases in seconds. SANDBOX enforces strict runtime boundaries with Just-in-Time approval gates.
+          Autonomous agents running with `yolo` or `--dangerously-skip-permissions` can accidentally wipe developer home directories or delete production cloud databases in seconds. AI AGENT FIREWALL enforces strict runtime boundaries with Just-in-Time approval gates.
         </p>
       </div>
 
@@ -42,24 +42,23 @@ export const ExcessiveAgencyPage: React.FC = () => {
         <div className="space-y-6 max-w-4xl mx-auto">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 text-xs font-mono-code text-[#d9ba84] uppercase tracking-wider">
-              <span className="size-1.5 rounded-full bg-[#d9ba84] animate-ping" />
+              <span className="font-bold">//</span>
               <ScrambleText text="JIT AUTHORIZATION GATEWAY // ARMED" />
             </div>
             <h2 className="text-2xl sm:text-3xl font-normal text-white uppercase tracking-tight">
               Just-in-Time Approval Simulator
             </h2>
             <p className="text-sm text-zinc-400">
-              Experience how SANDBOX catches high-impact destructive commands and halts execution until confirmed by a developer.
+              Experience how AI AGENT FIREWALL catches high-impact destructive commands and halts execution until confirmed by a developer.
             </p>
           </div>
 
           <div className="fps-glass rounded-2xl p-6 sm:p-8 font-mono-code text-xs space-y-6 shadow-2xl">
             <div className="flex items-center justify-between text-zinc-400 text-[11px] pb-3 border-b border-white/10">
-              <span className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-amber-400 animate-ping" />
-                AGENT SUBPROCESS QUEUE: SUSPENDED
+              <span className="flex items-center gap-2 text-amber-400 font-bold">
+                [AGENT SUBPROCESS QUEUE: SUSPENDED]
               </span>
-              <span className="text-[#d9ba84] font-bold px-2.5 py-1 rounded-full bg-[#d9ba84]/10 border border-[#d9ba84]/30">
+              <span className="text-[#d9ba84] font-bold px-2.5 py-1 rounded bg-[#d9ba84]/10 border border-[#d9ba84]/30 font-mono">
                 POL_01_PROD_DESTRUCTION
               </span>
             </div>
@@ -68,7 +67,7 @@ export const ExcessiveAgencyPage: React.FC = () => {
               <div className="text-zinc-500 text-[10px]">// Attempted Shell Command:</div>
               <div className="text-amber-300 font-bold text-sm">$ terraform destroy -target=module.production_db --auto-approve</div>
               <div className="text-zinc-400 text-[11px] pt-1">
-                Target: 16 Production RDS Instances · Blast Radius: Critical Outage
+                Target: 16 Production RDS Instances // Blast Radius: Critical Outage
               </div>
             </div>
 
@@ -79,7 +78,7 @@ export const ExcessiveAgencyPage: React.FC = () => {
                   <AlertOctagon className="size-4 text-[#d9ba84]" />
                   MANDATORY DEVELOPER CONFIRMATION REQUIRED
                 </span>
-                <span className="text-[10px] text-zinc-400 px-2 py-0.5 rounded-full bg-zinc-900 border border-white/5">
+                <span className="text-[10px] text-zinc-400 px-2 py-0.5 rounded bg-zinc-900 border border-white/5 font-mono">
                   VERDICT PENDING
                 </span>
               </div>
@@ -108,8 +107,8 @@ export const ExcessiveAgencyPage: React.FC = () => {
               </div>
 
               {approvalStatus === 'rejected' && (
-                <div className="p-4 rounded-xl bg-red-950/40 border border-red-900 text-red-300 text-[11px] leading-relaxed">
-                  ⛔ Subprocess killed with SIGKILL 137. Production infrastructure preserved. Incident logged to SANDBOX audit trail.
+                <div className="p-4 rounded-xl bg-red-950/40 border border-red-900 text-red-300 text-[11px] leading-relaxed font-mono">
+                  ⛔ Subprocess killed with SIGKILL 137. Production infrastructure preserved. Incident logged to AI AGENT FIREWALL audit trail.
                 </div>
               )}
 

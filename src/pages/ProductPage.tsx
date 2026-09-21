@@ -53,28 +53,28 @@ export const ProductPage: React.FC = () => {
 
   const faqs = [
     {
-      q: 'Does SANDBOX cover MCP servers and agent skills?',
-      a: 'Yes. SANDBOX actively discovers and monitors all Model Context Protocol (MCP) servers, tool endpoints, and custom skills connected to supported agents, including unapproved shadow AI tools.',
+      q: 'Does AI AGENT FIREWALL cover MCP servers and agent skills?',
+      a: 'Yes. AI AGENT FIREWALL actively discovers and monitors all Model Context Protocol (MCP) servers, tool endpoints, and custom skills connected to supported agents, including unapproved shadow AI tools and local server endpoints.',
     },
     {
-      q: 'Can SANDBOX prevent attacks before they execute?',
-      a: 'Yes. By running directly inside the agent harness on the device, SANDBOX evaluates tool calls and bash commands at the syscall level, stopping unauthorized actions before kernel dispatch.',
+      q: 'Can AI AGENT FIREWALL prevent attacks before they execute?',
+      a: 'Yes. Through its Layer 1 Preflight Static AST Gate, code is analyzed before compilation or interpreter execution. If unauthorized capabilities (such as reverse shells or root deletes) are detected, execution is halted in under 0.8ms with zero cloud roundtrip overhead.',
     },
     {
-      q: 'Is SANDBOX just monitoring?',
-      a: 'No. Traditional tools provide passive observability after the fact. SANDBOX combines runtime visibility with active deterministic controls that block or gate risky actions in real time.',
+      q: 'Is AI AGENT FIREWALL just passive monitoring?',
+      a: 'No. While agent-firewall watch offers real-time terminal observability, agent-firewall run actively compiles and sandboxes code within a hardened WebAssembly (WASI wasm32-wasip1) container with instruction-level CPU fuel limits (1,000,000 cap) and 32MB memory bounds.',
     },
     {
       q: 'What kinds of agent risk does it address?',
-      a: 'SANDBOX stops indirect prompt injection (DERAIL), DNS and tool data exfiltration, intent drift, memory poisoning, excessive agency (unapproved destructive actions), and unvetted MCP supply chain risks.',
+      a: 'It neutralizes reverse shells (os.dup2, socket.connect), credential exfiltration (.env, ~/.aws/credentials over DNS/HTTP), filesystem destruction (shutil.rmtree, rm -rf), dynamic eval injections, infinite loop DoS, and unvetted MCP supply chain risks.',
     },
     {
       q: 'Will it work with the agents and tools we already use?',
-      a: 'Yes. SANDBOX hooks into the local runtime without requiring you to change models or re-architect existing development workflows.',
+      a: 'Yes. Universal zero-friction support for Claude Code, Cursor IDE, Windsurf, Devin, Devika CLI, Aider, GitHub Copilot, and custom autonomous agents without requiring model alterations.',
     },
     {
-      q: 'Can we keep agent data inside our environment?',
-      a: 'Yes. The sensor operates 100% on the device with zero cloud dependency for policy evaluation. Source code and tokens never leave your security boundary.',
+      q: 'Can we keep agent data completely inside our environment?',
+      a: 'Yes. The entire preflight scanner and Wasmtime execution harness run 100% on the developer machine or self-hosted CI/CD runner. Source code, tokens, and telemetry never leave your security perimeter.',
     },
   ];
 
@@ -94,7 +94,7 @@ export const ProductPage: React.FC = () => {
           <SplitTextReveal type="words" delay={0.1}>
             SECURE THE AGENT
           </SplitTextReveal> <br />
-          <span className="text-[#d9ba84] italic font-serif">
+          <span className="text-[#d9ba84] font-medium tracking-tight">
             <SplitTextReveal type="words" delay={0.25}>
               execution harness.
             </SplitTextReveal>
@@ -166,10 +166,10 @@ export const ProductPage: React.FC = () => {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 font-mono-code text-xs">
             {supportedAgents.map((agent, idx) => (
               <TiltCard key={idx} maxTilt={14} data-cursor="HARNESS" className="rounded-2xl h-full">
-                <div className="fps-square-cell rounded-2xl p-5 text-center group cursor-default w-full h-full">
-                  <div className="size-2 rounded-full bg-[#d9ba84] mb-3 group-hover:scale-150 transition-transform shadow-[0_0_10px_#d9ba84]" />
+                <div className="fps-square-cell rounded-2xl p-5 text-center group cursor-default w-full h-full flex flex-col items-center justify-between">
+                  <span className="font-mono text-[10px] text-[#d9ba84] font-bold tracking-wider mb-2">[ACTIVE]</span>
                   <span className="text-white font-semibold text-xs tracking-wider uppercase">{agent}</span>
-                  <span className="text-[10px] text-zinc-500 mt-2">PROTECTED</span>
+                  <span className="text-[10px] text-zinc-400 mt-2 font-mono">GOVERNED</span>
                 </div>
               </TiltCard>
             ))}

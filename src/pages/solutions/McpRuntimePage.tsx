@@ -24,14 +24,14 @@ export const McpRuntimePage: React.FC = () => {
           <SplitTextReveal type="words" delay={0.1}>
             MODEL CONTEXT PROTOCOL
           </SplitTextReveal> <br />
-          <span className="text-[#d9ba84] italic font-serif">
+          <span className="text-[#d9ba84] font-medium tracking-tight">
             <SplitTextReveal type="words" delay={0.25}>
               (mcp) runtime security.
             </SplitTextReveal>
           </span>
         </h1>
         <p className="text-base sm:text-lg text-zinc-400 font-normal leading-relaxed">
-          MCP allows agents to connect to local databases, terminals, and third-party SaaS integrations. SANDBOX vets, sandboxes, and governs MCP server execution to stop rogue tool privilege escalation.
+          MCP allows agents to connect to local databases, terminals, and third-party SaaS integrations. AI AGENT FIREWALL vets, sandboxes, and governs MCP server execution to stop rogue tool privilege escalation.
         </p>
       </div>
 

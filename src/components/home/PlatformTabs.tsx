@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Sliders, ShieldAlert, FileText, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { Search, Sliders, ShieldAlert, FileText, CheckCircle2, ArrowUpRight, Zap } from 'lucide-react';
 import { sound } from '../../utils/sound';
 import { SectionBeamHeader } from '../layout/SectionBeamHeader';
 import { ScrambleText } from '../animations/ScrambleText';
@@ -93,6 +93,24 @@ const TABS: TabItem[] = [
       telemetryTitle: 'Corsair GitHub Bridge State',
       details: 'PR #42: Passed AST static gating & 14,208 fuel check // Audit proof posted to GitHub',
       metric: 'PR PASSED',
+    },
+  },
+  {
+    id: 'swarm',
+    name: '05 / SWARM DEFENSE',
+    title: '50-to-1,000 Agent Concurrency Governor & In-Memory Threat Cache.',
+    description: 'Guarantees host stability during massive multi-agent parallel operations with an ingress semaphore governor, Wasmtime memory pooling, and sub-millisecond threat caching.',
+    icon: Zap,
+    bullets: [
+      'BoundedSemaphore(16) governor prevents host thread starvation during 50-1,000 agent surges',
+      'Ephemeral UUID workspaces guarantee zero cross-agent file pollution or workspace collisions',
+      'In-memory Swarm Threat Cache neutralizes attack replicas in 0.01ms (122x faster than AST parsing)',
+    ],
+    mockData: {
+      badge: 'SWARM GOVERNOR // 50 AGENTS ARMED',
+      telemetryTitle: '50-Agent Live Swarm Defense State',
+      details: '40/40 Attacks Neutralized (100%) // 10 Clean Agents Allowed // 0 Crashes // 1.15s Total',
+      metric: 'SWARM NEUTRALIZED',
     },
   },
 ];
